@@ -33,6 +33,15 @@ const config = {
     publicPath: "/",
     overlay: true,
     quiet: true,
+    proxy: {
+      "/api": {
+        target: "http://localhost:9000",
+        secure: false,
+        pathRewrite: {
+          "^/api": "",
+        },
+      },
+    },
   },
 
   module: {
